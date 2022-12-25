@@ -13,12 +13,16 @@ h1, h2, h3, h4, h5, h6, p{
 body{
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
 }
 .container {
     padding-left: 1em;
     padding-right: 1em;
     margin-left: auto;
     margin-right: auto;
+  }
+  .hide{
+    display: none;
   }
 /* Small */
 @media (min-width: 768px) {
@@ -41,11 +45,17 @@ body{
 
   /* Start Header */
 header{
-position: fixed;
-z-index: 100;
-width: 100%;
-box-shadow: 0 0 20px lightblue;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  box-shadow: 0 0 20px lightblue;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
 }
+
 header .container{
   position: relative;
   text-align: center;
@@ -137,8 +147,10 @@ header .container .toggle-menu:checked ~ nav{
   }
   header .container{
     display: flex;
+
     
   }
+  
   header .container nav{
   position: relative;
   left: 0;
@@ -159,6 +171,48 @@ header .container nav ul li a:hover{
   color: white;
   background-color: rgb(0 100 0 /50%);
 }
+}
+
+header .container .user-profile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-left: 2.5em;
+}
+header .container .user-profile ul{
+  position: absolute;
+  top: 100%;
+  right: 0.5em;
+  list-style: none;
+  text-align: left;
+  background-color: rgb(0 0 0 /60%);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+header .container .user-profile ul a{
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 1em;
+}
+/* on mobile */
+@media (max-width: 767px) {
+  header .container .user-profile{
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    font-size: 1rem;
+    margin-left: 0;
+  }
+  header .container .user-profile ul{
+    top: 183%;
+    width: 873%;
+  }
+  header .container .user-profile ul a{
+    margin-top: 10px;
+  }
 }
 /* End Header */
 /* Start Landing */
@@ -191,6 +245,7 @@ header .container nav ul li a:hover{
   .landing span{
     color: orangered;
   }
+
 /* End Landing */
 /* Start Services */
 .services{
@@ -440,5 +495,107 @@ header .container nav ul li a:hover{
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 /* End Contact */
+/* Start Singup */
+
+.signup {
+  position: relative;
+  height: 100vh;
+  /* background: rgb(0 0 0 /60%); */
+}
+.signup .container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.signup .container .image{
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 40%;
+}
+.signup .container .image img{
+  max-width: 100%;
+}
+.signup .container .form{
+flex: 1;
+height: 500px;
+}
+.signup .container .form form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+  width: 50%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0 0 20px #ddd;
+}
+.signup .container .form form > input:not(:last-child){
+  padding: 0 2px 0 4px;
+  margin-bottom: 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  color: black;
+  font-size: .8em;
+  border-bottom: 2px solid #bbb6b6;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  text-align: center;
+}
+.signup .container .form form input[type="submit"]{
+  border-radius: 5px;
+  padding: 0.2em 0.5em;
+  background: none;
+  border: 1px solid gray;
+  color: blue;
+  margin-top: 1em;
+}
+/* form on small screen*/
+@media (max-width: 767px) {
+  .signup .container .image{
+    display: none;
+  }
+  .signup .container{
+    position: relative;
+
+  }
+  .signup .container .form{
+    height: auto;
+  }
+  .signup .container .form form{
+    width: 80%;
+    padding-top: 2em;
+  }
+}
+/* End Signup */
