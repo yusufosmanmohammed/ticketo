@@ -415,11 +415,11 @@ header .container .user-profile ul a{
   font-size: 12px;
   text-decoration: none;
   color: white;
-
   background: #fc6e30;
   padding: 5px 10px;
   border-radius: 5px;
 }
+
 /* End Events */
 /* Start My Reservatoins */
 .my-reservations{
@@ -489,6 +489,10 @@ header .container .user-profile ul a{
   width: 100px;
   height: 100px;
   max-width: 100%;
+}
+.my-reservations .res-panel .panel-buttons a:first-child{
+  background-color: red;
+  color: white;
 }
 /* on mobile */
 @media (max-width: 767px) {
