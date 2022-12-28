@@ -86,8 +86,7 @@ header .container nav{
 }
 header .container nav ul{
   list-style: none;
-  background-color: rgb(0 0 0 /60%);
-    padding: 1em 0.5em 0.5em;
+
   
 }
 /* header .container nav ul li{} */
@@ -104,6 +103,10 @@ header .container nav ul li a{
   header .container nav ul li a:hover{
     color: green;
     padding-left: 5px;
+  }
+  header .container nav ul {
+    background-color: rgb(0 0 0 /60%);
+    padding: 1em 0.5em 0.5em;
   }
 }
 header .container .toggle-menu-label{
